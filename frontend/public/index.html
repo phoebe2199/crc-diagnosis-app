@@ -1,17 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>React and Flask App</title>
+    <title>CRC Diagnosis App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+    body, html {
+      height: 100%;
+      line-height: 1.8;
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+      background-position: center;
+      background-size: cover;
+      background-image: url(./cancerous_cell.jpg);
+      min-height: 88%;
+    }
+
+    .w3-bar .w3-button {
+      padding: 12px;
+    }
+    </style>
   </head>
-  <body>
-    <h1>Hello??...</h1>
-    <div id="root"></div>
-    <h1>HELLOOOO</h1>
-  </body>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <a href="https://www.exeter.ac.uk" class="w3-bar-item w3-wide"><img src="./logo-small.png" alt="logo" style="max-height: 100px; max-width: 100%;"></a>
+      <a class="w3-bar-item w3-wide align-right">Phoebe Alderman   |   Computer Science BSc   |  University of Exeter   |  pa354@exeter.ac.uk</a>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Header with full-height image  #01c897-->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding: 80px">
+    <span class="w3-jumbo w3-hide-small" style="border-radius: 8px 8px 8px 8px; background-color: #01c896d3;">Clinical Support Tool for Colorectal Cancer Diagnosis</span><br>
+    <span class="w3-large" style="font-size: 24px; border-radius: 8px 8px 8px 8px; background-color: #01c896d3;">This tool uses image recognition technology to assist clinicians in the diagnosis of colorectal cancer.</span>
+    <br>
+    <span class="w3-large" style="font-size: 24px; border-radius: 8px 8px 8px 8px; background-color: #01c896d3;">Follow the link below to see the code beind this project!</span>
+    <p><a href="https://github.com/phoebe2199/crc-diagnosis-app" class="w3-button w3-padding-large w3-large w3-margin-top w3-hover-opacity-off" style="border-radius: 15px 15px 15px 15px; background-color: #01c896d3;"><b>GitHub</b></a></p>
+  </div> 
+</header>
+
+<!-- About Section -->
+<div class="w3-container" style="padding: 40px 40px" id="about">
+  <h3 class="w3-center">ABOUT OUR PROJECT</h3>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-heartbeat w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Purpose</p>
+      <p>This tool has been made for clinicians for the purpose of colorectal cancer diagnosis and is intended to provide robust and immediate diagnosis.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-institution w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Importance</p>
+      <p>Computer-adided diagnosis tools like ours have the potential to revolutionise the medical field, 
+        providing more efficient and effective diagnoses that can lead to better patient outcomes.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-globe w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Provision</p>
+      <p>While our tool is currently in the proof-of-concept stage and not publicy available, we hope to make it more widely accessible in the future. 
+        We are continuing to refine the tool and improve its accessibility, with the ultimate goal of helping more people receive accurate diagnoses for colorectal cancer.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cogs w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Technology</p>
+      <p>Our tool uses a type of artificial intelligence called convolutional neural networks (CNNs). 
+        We have trained these networks using different architectures, including VGG16, ResNet50, and InceptionV3, to classify the tissue class of a histopathology image stained with H&E.
+      The CNN analyses the features of an image, such as colour and texture, to identify patterns that are indicative of cancerous tissue.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Promo Section - "We know design" -->
+<div class="w3-container" style="background-color: #01c896d3; padding:128px 16px">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <div id="root">
+      
+      </div>
+    </div>
+    <div class="w3-col m6">
+      <img class="w3-image w3-round-large" src="https://www.w3schools.com/w3images/phone_buildings.jpg" alt="Buildings" width="700" height="394">
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey" style="align-items: center; padding:40px 16px" id="contact">
+  <h3 class="w3-center">CONTACT US</h3>
+  <p class="w3-center w3-large">Share feedback on your experience with our diagnosis tool:</p>
+  <div style="margin-top:20px;">
+    <p><i class="w3-center fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i>Exeter, UK</p>
+    <p><i class="w3-center fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i>Email: pa354@exeter.ac.uk</p>
+  </div>
+</div>
+
+<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <p class="w3-small" style="padding: 20px 80px">This website is an independent project created by Phoebe Alderman, a student at the University of Exeter. 
+  The views expressed on this website are solely those of the author and do not necessarily reflect the views of the University of Exeter. At this moment, this website should not be used as a substitute for professional medical advice, diagnosis, or treatment. 
+  Always seek the advice of a qualified healthcare provider with any questions you may have regarding a medical condition. By using this website, you agree to our terms of use and privacy policy.</p>
+  </p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
 </html>

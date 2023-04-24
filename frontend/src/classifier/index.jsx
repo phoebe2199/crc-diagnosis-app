@@ -37,6 +37,7 @@ const Classifier = () => {
     // the following HTML is rendered when Classifier() is called
     return (
         <>
+        <div></div>
             <header>
                 <h1>Classify Image:</h1>
             </header>
@@ -50,9 +51,12 @@ const Classifier = () => {
                 </select>
             </label>
             <main>
-                <input type="file" onChange={handleImageUpload} accept="image/*" />
+                <input type="file" onChange={handleImageUpload} accept="image/*" id="upload-img"/>
                 {result && <p>{result}</p>}
-                {loading && <p><img src={require("./img/progress.gif")} alt="Loading" width={70}/></p>}
+                {loading && <p><img src={require("./img/progress_transparent.gif")} alt="Loading" width={70}/></p>}
+                <div id="display-image">
+
+                </div>
             </main> 
         </>
     );

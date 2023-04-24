@@ -30,16 +30,6 @@ export default function App() {
     // )
       // the following HTML is always displayed 
     return (
-      <div className="App container">
-        <div className="row">
-          <div className="text-center">
-            <h1>Colorectal Cancer Diagnosis Tool</h1>
-          </div>
-        </div>
-        
-        <Classifier 
-        />
-
-      </div>
+        <Classifier/>
     );
   }
