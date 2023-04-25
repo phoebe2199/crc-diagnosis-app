@@ -34,9 +34,10 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-      <a href="https://www.exeter.ac.uk" class="w3-bar-item w3-wide"><img src="./images/logo-small.png" alt="logo" style="max-height: 100px; max-width: 100%;"></a>
-      <a class="w3-bar-item w3-wide align-right">Phoebe Alderman   |   Computer Science BSc   |  University of Exeter   |  pa354@exeter.ac.uk</a>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <span class="w3-bar-item w3-right w3-wide" style="font-size: large;">Phoebe Alderman   |   Computer Science BSc   |  University of Exeter   |  pa354@exeter.ac.uk</span>
+      <a href="https://www.exeter.ac.uk" class="w3-bar-item w3-wide"><img src="./images/logo-small.png" alt="logo" style="max-height: 110px; max-width: 100%;"></a>
+      <!-- <a class="w3-bar-item w3-wide" style="align-items: right;">Phoebe Alderman   |   Computer Science BSc   |  University of Exeter   |  pa354@exeter.ac.uk</a> -->
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
       <i class="fa fa-bars"></i>
     </a>
@@ -66,7 +67,7 @@
     <div class="w3-quarter">
       <i class="fa fa-institution w3-margin-bottom w3-jumbo"></i>
       <p class="w3-large">Importance</p>
-      <p>Computer-adided diagnosis tools like ours have the potential to revolutionise the medical field, 
+      <p>Computer-adided diagnostic tools like ours have the potential to revolutionise the medical field, 
         providing more efficient and effective diagnoses that can lead to better patient outcomes.</p>
     </div>
     <div class="w3-quarter">
@@ -86,23 +87,12 @@
 </div>
 
 <!-- Classifier section -->
-<!-- <div class="w3-container" style="background-color: #01c896d3; padding:128px 16px"> -->
-  <!-- <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <div id="root">
-      
-      </div>
-    </div>
-    <div class="w3-col m6">
-      <img class="w3-image w3-round-large" src="https://www.w3schools.com/w3images/phone_buildings.jpg" alt="Buildings" width="700" height="394">
-    </div>
-  </div> -->
   <div class="w3-container" style="background-color: #01c896d3; align-items: center; padding:40px 16px">
     <h3 class="w3-center">CLASSIFIER TOOL</h3>
     <p class="w3-center w3-large">Upload an image to receive a diagnosis</p>
     <div style="margin-top:20px;">
       <div class="w3-center" style="align-items: center;" id="root">
-
+        <!-- classifier() -->
       </div>
     </div>
   </div>
@@ -110,17 +100,15 @@
 </div>
 
 <!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="align-items: center; padding:40px 16px" id="contact">
+<div class="w3-container" style="align-items: center; padding:40px 40px" id="contact">
   <h3 class="w3-center">CONTACT US</h3>
   <p class="w3-center w3-large">Share feedback on your experience with our diagnosis tool:</p>
-  <div style="margin-top:20px;">
-    <p><i class="w3-center fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i>Exeter, UK</p>
-    <p><i class="w3-center fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i>Email: pa354@exeter.ac.uk</p>
-  </div>
+  <p class="w3-center"><i class="fa fa-map-marker fa-fw w3-xxlarge"></i>Exeter, UK</p>
+  <p class="w3-center"><i class="fa fa-envelope fa-fw w3-xxlarge"></i>Email: pa354@exeter.ac.uk</p>
 </div>
 
 <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
-<footer class="w3-center w3-black w3-padding-64" style="padding: 10px;">
+<footer class="w3-center w3-black" style="padding: 40px 40px;">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right" style="padding: 10px;"></i>To the top</a>
   <p style="padding: 10px 80px">This website is an independent project created by Phoebe Alderman, a student at the University of Exeter. 
   The views expressed on this website are solely those of the author and do not necessarily reflect the views of the University of Exeter. At this moment, this website should not be used as a substitute for professional medical advice, diagnosis, or treatment. 

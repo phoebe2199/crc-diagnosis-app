@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Classifier = () => {
-    const [result, setResult] = useState("");
+    const [result, setResult] = useState("NOTE: The following prediction should not be taken as a professional medical opinion");
     const [image, setImage] = useState("");
     const [model, setModel] = useState("InceptionV3 Transfer Learning");
     const [loading, setLoading] = useState(false);

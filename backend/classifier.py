@@ -110,7 +110,7 @@ def prepare_predict(img, model_selection):
             tissue_class = pred_info[0]
             tissue_description = pred_info[1]
             is_cancerous = "cancerous" if pred_info[2] else "non-cancerous"
-            return f"Diagnosis is {is_cancerous}: {tissue_class} - {tissue_description} with {'{0:.2%}'.format(pred_array[0][class_index][0])} confidence"
+            return f"[ Diagnosis is {is_cancerous}: {tissue_class} - {tissue_description} with {'{0:.2%}'.format(pred_array[0][class_index][0])} confidence ]"
         else:
             return "Error: Could not find selected model"
         
