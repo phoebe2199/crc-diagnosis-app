@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+body {
+  color: rgb(28, 75, 89);
+}
+
+h5 {
+  padding: 10px 10px 5px 10px;
+  color: white;
+  font-size: 27px;
+}
+
+.result {
+  font-size: 20px;
+  color: rgb(28, 75, 89);
+}
+
+.fa-upload{
+  color: black;
+
+}
+
+select {
+  padding: 10px 10px 5px 10px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  /* border: 1px solid #ccc; */
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}

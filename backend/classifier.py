@@ -36,21 +36,29 @@ def f1_score(y_true, y_pred): # weighted average of PPV and sensitivity
 
 # key: [model_name, file_location, custom_objects]
 address_lookup = {
+    'VGG16 From Scratch': [
+        '/Users/phoebealderman/Documents/Fourth Year/ECM3401 Dissertation/final_models/VGG16_1.h5',
+        {"f1_score": f1_score, "precision_":precision_, "recall_":recall_, "specificity_":specificity_}
+    ],
     'VGG16 Transfer Learning': [
-        '/Users/phoebealderman/Documents/Fourth Year/ECM3401 Dissertation/models/ft_vgg16_120epochs.h5',
-        None
+        '/Users/phoebealderman/Documents/Fourth Year/ECM3401 Dissertation/final_models/VGG16_tl_1.h5',
+        {"f1_score": f1_score, "precision_":precision_, "recall_":recall_}
     ],
-    'IV3 Transfer Learning': [
-        '/Users/phoebealderman/Documents/Fourth Year/ECM3401 Dissertation/models/IV3_tl_3.h5',
-        {"f1_score": f1_score, "precision_":precision_, "recall_":recall_, "specificity_":specificity_}
+    'ResNet50 From Scratch': [
+        '/Users/phoebealderman/Documents/Fourth Year/ECM3401 Dissertation/final_models/RN50_8.h5',
+        {"f1_score": f1_score, "precision_":precision_, "recall_":recall_}
     ],
-    'RN50 Transfer Learning': [
-        '/Users/phoebealderman/Documents/Fourth Year/ECM3401 Dissertation/models/RN50_tl_2.h5',
-        {"f1_score": f1_score, "precision_":precision_, "recall_":recall_, "specificity_":specificity_}
+    'ResNet50 Transfer Learning': [
+        '/Users/phoebealderman/Documents/Fourth Year/ECM3401 Dissertation/final_models/RN50_tl_4.h5',
+        {"f1_score": f1_score, "precision_":precision_, "recall_":recall_}
     ],
-    'RN50': [
-        '/Users/phoebealderman/Documents/Fourth Year/ECM3401 Dissertation/models/RN50_5.h5',
-        {"f1_score": f1_score, "my_precision":precision_, "my_recall":recall_,}
+    'InceptionV3 From Scratch': [
+        '/Users/phoebealderman/Documents/Fourth Year/ECM3401 Dissertation/final_models/IV3_2.h5',
+        {"f1_score": f1_score, "precision_":precision_, "recall_":recall_,}
+    ],
+    'InceptionV3 Transfer Learning': [
+        '/Users/phoebealderman/Documents/Fourth Year/ECM3401 Dissertation/final_models/IV3_tl_4.h5',
+        {"f1_score": f1_score, "precision_":precision_, "recall_":recall_,}
     ]
 }
 
@@ -84,7 +92,7 @@ def prepare_predict(img, model_selection):
         img_array = keras.preprocessing.image.img_to_array(pil_img)
         img_array = img_array / 255
         # adjust size based on model
-        img_size = (299, 299) if model_selection == "IV3 Transfer Learning" else (224, 224)
+        img_size = (299, 299) if model_selection == "InceptionV3 Transfer Learning" or model_selection == "InceptionV3 From Scratch" else (224, 224)
         img_array = tf.image.resize(img_array, img_size)
         img_array = np.expand_dims(img_array, axis=0)
 
@@ -102,7 +110,7 @@ def prepare_predict(img, model_selection):
             tissue_class = pred_info[0]
             tissue_description = pred_info[1]
             is_cancerous = "cancerous" if pred_info[2] else "non-cancerous"
-            return f"Prediction from {model_selection}: {tissue_class} - {tissue_description}, ({is_cancerous}), {'{0:.2%}'.format(pred_array[0][class_index][0])} confidence"
+            return f"Diagnosis is {is_cancerous}: {tissue_class} - {tissue_description} with {'{0:.2%}'.format(pred_array[0][class_index][0])} confidence"
         else:
             return "Error: Could not find selected model"
         

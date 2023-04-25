@@ -3,23 +3,8 @@ import React, { useState } from "react";
 const Classifier = () => {
     const [result, setResult] = useState("");
     const [image, setImage] = useState("");
-    const [model, setModel] = useState("VGG16 Transfer Learning");
+    const [model, setModel] = useState("InceptionV3 Transfer Learning");
     const [loading, setLoading] = useState(false);
-    // const image_input = document.querySelector("upload-img");
-
-    // var uploaded_img = "";
-
-    // console.log(file.name)
-    // const reader = new FileReader();
-    // reader.addEventListener("load", () => {
-    //     uploaded_image = reader.result;
-    //     document.querySelector("#display-image").style.background
-    // })
-
-
-    // image_input.addEventListener("change", function(){
-    //     console.log(image_input.value)
-    // })
 
     const handleModel = (event) => {
         setModel(event.target.value);
@@ -63,22 +48,27 @@ const Classifier = () => {
         <>
         <div class="align-center">
             <label>
-                Select model:
+                <h5>Select model...</h5>
                 <select value={model} onChange={handleModel}>
+                    <option value="VGG16 From Scratch">VGG16 From Scratch</option>
                     <option value="VGG16 Transfer Learning">VGG16 Transfer Learning</option>
-                    <option value="IV3 Transfer Learning">IV3 Transfer Learning</option>
-                    <option value="RN50 Transfer Learning">RN50 Transfer Learning</option>
-                    <option value="RN50">RN50</option>
+                    <option value="ResNet50 From Scratch">ResNet50 From Scratch</option>
+                    <option value="ResNet50 Transfer Learning">ResNet50 Transfer Learning</option>
+                    <option value="InceptionV3 From Scratch">InceptionV3 From Scratch</option>
+                    <option value="InceptionV3 Transfer Learning">InceptionV3 Transfer Learning</option>
                 </select>
             </label>
             <main>
-                <input type="file" onChange={handleImageUpload} accept="image/*" id="upload-img"/>
-                {result && <h5>{result}</h5>}
-                {image && <p>{image}</p>}
-                {loading && <p><img src={require("./img/progress_transparent.gif")} alt="Loading" width={70}/></p>}
-                <div id="display-image">
+                <label for="upload-img" class="custom-file-upload">
+                    <h5><i class="fa fa-upload fa-fw fa-fw" aria-hidden="true"></i>&nbsp;Upload File...</h5>
+                    <input type="file" onChange={handleImageUpload} accept="image/*" id="upload-img" for="upload-img"/>
+                    {result && <p class="result">{result}</p>}
+                    {image && <p>{image}</p>}
+                    {loading && <p><img src={require("./img/progress_transparent.gif")} alt="Loading" width={70}/></p>}
+                    <div id="display-image">
 
-                </div>
+                    </div>
+                </label>
             </main>
             </div>
         </>
