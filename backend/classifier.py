@@ -53,7 +53,7 @@ address_lookup = {
         {"f1_score": f1_score, "precision_":precision_, "recall_":recall_}
     ],
     'InceptionV3 From Scratch': [
-        '/Users/phoebealderman/Documents/Fourth Year/ECM3401 Dissertation/final_models/IV3_2.h5',
+        '/Users/phoebealderman/Documents/Fourth Year/ECM3401 Dissertation/final_models/IV3_3.h5',
         {"f1_score": f1_score, "precision_":precision_, "recall_":recall_,}
     ],
     'InceptionV3 Transfer Learning': [
