@@ -19,11 +19,11 @@ Once you have those tools installed, you can clone the repository to your local 
 
 Next, navigate to the cloned repository directory and install the necessary dependencies by running the following commands:
 
-`npm install`
-
-`npm run install:backend`
-
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+cd frontend
+npm install
+```
 
 ## Usage
 To start the app, you can use the following command:
